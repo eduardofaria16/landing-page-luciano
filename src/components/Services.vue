@@ -18,7 +18,6 @@
           </ul>
           <div class="service-card__footer">
             <span class="service-card__duration">{{ service.duration }}</span>
-            <span class="service-card__price">{{ service.price }}</span>
           </div>
         </div>
       </div>
@@ -70,7 +69,6 @@ const services = [
       'Acompanhamento contínuo'
     ],
     duration: '50 min',
-    price: 'A partir de €60'
   },
   {
     id: 2,
@@ -84,7 +82,6 @@ const services = [
       'Fortalecimento da intimidade'
     ],
     duration: '60 min',
-    price: 'A partir de €80'
   },
   {
     id: 3,
@@ -98,7 +95,6 @@ const services = [
       'Fortalecimento de vínculos'
     ],
     duration: '60 min',
-    price: 'A partir de €90'
   },
   {
     id: 4,
@@ -112,7 +108,6 @@ const services = [
       'Estratégias de coping'
     ],
     duration: '50 min',
-    price: 'A partir de €65'
   },
   {
     id: 5,
@@ -126,7 +121,6 @@ const services = [
       'Desenvolvimento de equipas'
     ],
     duration: 'Variável',
-    price: 'Orçamento personalizado'
   },
   {
     id: 6,
@@ -140,7 +134,6 @@ const services = [
       'Plano de desenvolvimento'
     ],
     duration: '50 min',
-    price: 'A partir de €70'
   }
 ]
 </script>

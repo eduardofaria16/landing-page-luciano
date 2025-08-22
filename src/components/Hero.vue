@@ -37,8 +37,10 @@
             </div>
           </div>
         </div>
-        
-        <div class="hero__image">
+      </div>
+    </div>
+            
+    <div class="hero__image">
           <div class="hero__image-container">
             <img 
               src="/src/assets/LOGOTIPO.png" 
@@ -46,8 +48,6 @@
               class="hero__img"
             />
           </div>
-        </div>
-      </div>
     </div>
   </section>
 </template>
@@ -207,14 +207,13 @@
 
 .hero__img {
   width: 100%;
-  height: 500px;
+  height: 600px;
   object-fit: cover;
   transition: var(--transition-slow);
 }
 
 .hero__image-overlay {
   position: absolute;
-  top: var(--spacing-xl);
   right: var(--spacing-xl);
 }
 
@@ -335,7 +334,7 @@
   }
   
   .hero__image-overlay {
-    top: var(--spacing-md);
+    
     right: var(--spacing-md);
   }
 }

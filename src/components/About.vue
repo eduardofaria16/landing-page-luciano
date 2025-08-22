@@ -44,7 +44,14 @@
               Um estudioso da mente humana e suas correlações com os contextos que atravessam o sujeito (a pessoa) contemporâneo (a) por meio das relações de trabalho, sociais, íntimas, familiares e digitais, bem como um entusiasta do Humanismo, entende que o ser humano deve estar no centro de tudo aquilo que o cerca e que seu protagonismo e autonomia serão potencializados através de conexões profundas e saudáveis com seus pares.
             </p>
           </div>
-          
+          <div class="about__image-container">
+            <img 
+              src="/src/assets/rio.JPG" 
+              alt="Luciano Tarso - Psicólogo Clínico e Organizacional"
+              class="about__img"
+            />
+          </div>
+
           <div class="about__qualifications">
             <h4 class="about__qualifications-title">Formação e Especializações</h4>
             <div class="about__qualifications-grid">
@@ -178,7 +185,7 @@
 }
 
 .about__img {
-  width: 100%;
+  width: 95%;
   height: 500px;
   object-fit: cover;
 }
@@ -186,7 +193,7 @@
 .about__badge {
   position: absolute;
   top: var(--spacing-xl);
-  right: var(--spacing-xl);
+  left: var(--spacing-xx);
   background: rgba(45, 74, 58, 0.9);
   backdrop-filter: blur(10px);
   padding: var(--spacing-lg);

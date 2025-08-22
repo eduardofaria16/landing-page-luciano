@@ -10,19 +10,12 @@
         <div class="contact__info">
           <h3 class="contact__info-title">Informações de Contacto</h3>
           
-          <div class="contact__item">
-            <div class="contact__item-icon">📍</div>
-            <div class="contact__item-content">
-              <h4>Localização</h4>
-              <p>Rua das Flores, 123<br>1200-123 Lisboa, Portugal</p>
-            </div>
-          </div>
           
           <div class="contact__item">
             <div class="contact__item-icon">📞</div>
             <div class="contact__item-content">
               <h4>Telefone</h4>
-              <p>+351 912 345 678</p>
+              <p> 34 99687-7462</p>
             </div>
           </div>
           
@@ -30,9 +23,17 @@
             <div class="contact__item-icon">✉️</div>
             <div class="contact__item-content">
               <h4>Email</h4>
-              <p>ana.silva@psicologa.pt</p>
+              <p>tarsoluciano@gmail.com</p>
             </div>
           </div>
+
+          <div class="contact__item">
+            <div class="contact__item-icon">📱</div>
+            <div class="contact__item-content">
+              <h4>Instagram</h4>
+              <p>@luciano.tarso</p>
+            </div>
+         </div>
           
           <div class="contact__item">
             <div class="contact__item-icon">🕒</div>
@@ -42,16 +43,6 @@
             </div>
           </div>
           
-          <div class="contact__emergency">
-            <h4 class="contact__emergency-title">Situações de Emergência</h4>
-            <p class="contact__emergency-text">
-              Em caso de crise ou emergência psicológica, contacte:
-            </p>
-            <div class="contact__emergency-numbers">
-              <div>SOS Voz Amiga: 213 544 545</div>
-              <div>Linha de Emergência Social: 144</div>
-            </div>
-          </div>
         </div>
         
         <div class="contact__form">

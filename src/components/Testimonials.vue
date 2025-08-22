@@ -32,22 +32,14 @@
       </div>
       
       <div class="testimonials__stats">
+      
         <div class="stat-item">
-          <div class="stat-item__number">150+</div>
-          <div class="stat-item__label">Pacientes Atendidos</div>
+          <div class="stat-item__number">Instituto De Psicologia Aplicada</div>
         </div>
         <div class="stat-item">
-          <div class="stat-item__number">10+</div>
-          <div class="stat-item__label">Anos de Experiência</div>
+          <div class="stat-item__number">Luciano Tarso</div>
         </div>
-        <div class="stat-item">
-          <div class="stat-item__number">95%</div>
-          <div class="stat-item__label">Taxa de Satisfação</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-item__number">24h</div>
-          <div class="stat-item__label">Resposta Máxima</div>
-        </div>
+
       </div>
     </div>
   </section>
@@ -57,45 +49,45 @@
 const testimonials = [
   {
     id: 1,
-    text: 'A Dra. Ana ajudou-me a superar um período muito difícil da minha vida. A sua abordagem empática e profissional fez toda a diferença. Hoje sinto-me muito mais confiante e capaz de lidar com os desafios do dia a dia.',
+    text: 'O Dr. Luciano me ajudou a superar um período muito difícil da minha vida. Sua abordagem empática e profissional fez toda a diferença. Hoje me sinto muito mais confiante e capaz de lidar com os desafios do dia a dia.',
     name: 'Maria S.',
     initials: 'MS',
     service: 'Terapia Individual'
   },
   {
     id: 2,
-    text: 'As sessões de terapia de casal salvaram o nosso relacionamento. A Dra. Ana ensinou-nos técnicas de comunicação que transformaram completamente a nossa dinâmica. Recomendo vivamente!',
-    name: 'João e Ana P.',
-    initials: 'JP',
-    service: 'Terapia de Casal'
+    text: 'Meu filho estava enfrentando dificuldades de aprendizagem e baixa autoestima na escola. Com o acompanhamento do Dr. Luciano, ele desenvolveu estratégias para melhorar o foco e a confiança. Hoje é uma criança muito mais feliz e motivada.',
+    name: 'Ana P.',
+    initials: 'AP',
+    service: 'Psicologia Escolar'
   },
   {
     id: 3,
-    text: 'Sofria de ansiedade há anos e não conseguia encontrar uma solução. Com as técnicas de mindfulness e o acompanhamento da Dra. Ana, aprendi a gerir a minha ansiedade de forma eficaz. Muito obrigada!',
+    text: 'Sofria de ansiedade há anos e não conseguia encontrar uma solução. Com as técnicas terapêuticas e o acompanhamento do Dr. Luciano, aprendi a gerir minha ansiedade de forma eficaz. Muito obrigada pela transformação!',
     name: 'Carla M.',
     initials: 'CM',
-    service: 'Gestão do Stress'
+    service: 'Terapia Clínica'
   },
   {
     id: 4,
-    text: 'O processo de orientação vocacional foi fundamental para a minha escolha de carreira. A Dra. Ana ajudou-me a descobrir as minhas verdadeiras paixões e aptidões. Estou muito feliz com a minha decisão.',
-    name: 'Pedro R.',
+    text: 'Como professora, procurei o Dr. Luciano para ajudar com um aluno que apresentava comportamentos desafiadores. Suas orientações foram fundamentais para criarmos um ambiente mais acolhedor e eficaz para o aprendizado.',
+    name: 'Professora Regina',
     initials: 'PR',
-    service: 'Orientação Vocacional'
+    service: 'Psicologia Escolar'
   },
   {
     id: 5,
-    text: 'A terapia familiar ajudou-nos a resolver conflitos antigos e a fortalecer os laços familiares. O ambiente seguro e acolhedor criado pela Dra. Ana permitiu que todos se expressassem livremente.',
-    name: 'Família Silva',
-    initials: 'FS',
-    service: 'Terapia Familiar'
+    text: 'A terapia individual me ajudou a resolver traumas antigos e a desenvolver uma autoestima mais saudável. O ambiente seguro e acolhedor criado pelo Dr. Luciano permitiu que eu me expressasse livremente e encontrasse meu equilíbrio emocional.',
+    name: 'Carlos Silva',
+    initials: 'CS',
+    service: 'Terapia Individual'
   },
   {
     id: 6,
-    text: 'Profissional excecional! A Dra. Ana tem uma capacidade única de nos fazer sentir compreendidos e apoiados. As suas técnicas são eficazes e os resultados são visíveis desde as primeiras sessões.',
+    text: 'Profissional excepcional! O Dr. Luciano tem uma capacidade única de nos fazer sentir compreendidos e apoiados. Suas técnicas são eficazes e os resultados são visíveis desde as primeiras sessões. Recomendo sem hesitar!',
     name: 'Ricardo T.',
     initials: 'RT',
-    service: 'Terapia Individual'
+    service: 'Terapia Clínica'
   }
 ]
 </script>
