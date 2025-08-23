@@ -50,28 +50,28 @@ const testimonials = [
   {
     id: 1,
     text: 'Cheguei aos 40 anos e muito angustiado com minha situação profissional...precisava mudar...não estava legal. Procurei o Dr. Luciano e foi como um bálsamo! Ele me ajudou bastante fazer minha transição de carreira e hoje estou muito satisfeito com minha nova vida.',
-    name: 'Nome: Maria S, Idade: 38, Profissão: Dentista',
+    name: 'Maria S, 40 anos',
     initials: 'MS',
     service: 'Terapia Individual'
   },
   {
     id: 2,
     text: 'Meu filho estava enfrentando dificuldades de aprendizagem e baixa autoestima na escola. Com o acompanhamento do Dr. Luciano, ele desenvolveu estratégias para melhorar o foco e a confiança. Hoje é uma criança muito mais feliz e motivada.',
-    name: 'Ana P.',
+    name: 'Ana P, 47 anos',
     initials: 'AP',
     service: 'Psicologia Escolar'
   },
   {
     id: 3,
     text: 'Sofria de ansiedade há anos e não conseguia encontrar uma solução. Com as técnicas terapêuticas e o acompanhamento do Dr. Luciano, aprendi a gerir minha ansiedade de forma eficaz. Muito obrigada pela transformação!',
-    name: 'Carla M.',
+    name: 'Carla M, 23 anos',
     initials: 'CM',
     service: 'Terapia Clínica'
   },
   {
     id: 4,
-    text: 'Como professora, procurei o Dr. Luciano para ajudar com um aluno que apresentava comportamentos desafiadores. Suas orientações foram fundamentais para criarmos um ambiente mais acolhedor e eficaz para o aprendizado.',
-    name: 'Professora Regina',
+    text: 'Nossa escola estava passando por um momento muito difícil...pais, alunos e professores não conseguiam alinhar suas expectativas para com o outro. O Dr. Luciano foi fundamental no processo de organização sistêmica da nossa Comunidade Escolar. Estamos muito felizes com o resultado',
+    name: 'Diretora Regina, 53 anos',
     initials: 'PR',
     service: 'Psicologia Escolar'
   },
@@ -84,7 +84,7 @@ const testimonials = [
   },
   {
     id: 6,
-    text: 'Profissional excepcional! O Dr. Luciano tem uma capacidade única de nos fazer sentir compreendidos e apoiados. Suas técnicas são eficazes e os resultados são visíveis desde as primeiras sessões. Recomendo sem hesitar!',
+    text: 'Profissional excepcional! O Psicologo Luciano tem uma capacidade única de nos fazer sentir compreendidos e apoiados. Suas técnicas são eficazes e os resultados são visíveis desde as primeiras sessões. Recomendo sem hesitar!',
     name: 'Ricardo T.',
     initials: 'RT',
     service: 'Terapia Clínica'

@@ -25,6 +25,25 @@ import Footer from './components/Footer.vue'
 </template>
 
 <style>
+/* Importando a fonte Baradig */
+@font-face {
+  font-family: 'Baradig';
+  src: url('/fonts/Baradig-Regular.woff2') format('woff2'),
+       url('/fonts/Baradig-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Baradig';
+  src: url('/fonts/Baradig-Bold.woff2') format('woff2'),
+       url('/fonts/Baradig-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset e estilos globais */
 * {
   margin: 0;
@@ -33,7 +52,7 @@ import Footer from './components/Footer.vue'
 }
 
 :root {
-  /* Nova Paleta de Cores baseada na Logomarca */
+  /* Cores */
   --primary-color: #303829;
   --accent-color: #D18552;
   --secondary-color: #91907E;
@@ -41,9 +60,9 @@ import Footer from './components/Footer.vue'
   --white: #ffffff;
   --dark-gray: #2c3e50;
   --text-light: #6B7280;
-  
+
   /* Tipografia */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family: 'Baradig', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-size-xs: 12px;
   --font-size-sm: 14px;
   --font-size-base: 16px;
@@ -53,8 +72,8 @@ import Footer from './components/Footer.vue'
   --font-size-3xl: 32px;
   --font-size-4xl: 40px;
   --font-size-5xl: 48px;
-  
-  /* EspaÃ§amentos */
+
+  /* Espaçamentos */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -63,18 +82,18 @@ import Footer from './components/Footer.vue'
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
   --spacing-4xl: 5rem;
-  
+
   /* Sombras */
   --shadow-sm: 0 1px 2px 0 rgba(45, 74, 58, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(45, 74, 58, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(45, 74, 58, 0.1);
   --shadow-xl: 0 20px 25px -5px rgba(45, 74, 58, 0.1);
-  
-  /* TransiÃ§Ãµes */
+
+  /* Transições */
   --transition-fast: 0.15s ease-in-out;
   --transition-normal: 0.3s ease-in-out;
   --transition-slow: 0.5s ease-in-out;
-  
+
   /* Bordas */
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
@@ -84,6 +103,7 @@ import Footer from './components/Footer.vue'
 
 html {
   scroll-behavior: smooth;
+  font-family: var(--font-family);
 }
 
 body {
@@ -104,7 +124,7 @@ main {
   flex: 1;
 }
 
-/* UtilitÃ¡rios */
+/* Utilitários */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -116,6 +136,7 @@ main {
 }
 
 .section-title {
+  font-family: var(--font-family);
   font-size: var(--font-size-2xl);
   font-weight: 700;
   color: var(--primary-color);
@@ -124,8 +145,9 @@ main {
 }
 
 .section-subtitle {
-  font-size: var(--font-size-large);
-  color: var(--neutral-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-lg);
+  color: var(--secondary-color);
   text-align: center;
   margin-bottom: var(--spacing-lg);
   max-width: 600px;
@@ -137,7 +159,8 @@ main {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-family);
   font-size: var(--font-size-base);
   font-weight: 600;
   text-decoration: none;
@@ -181,6 +204,11 @@ main {
   .section-title {
     font-size: var(--font-size-xl);
   }
+  
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
 }
+
 
 </style>
