@@ -27,7 +27,7 @@
           <div class="about__intro">
             <h3 class="about__name">Luciano Tarso</h3>
             <p class="about__credentials">
-              Palestrante, Psicólogo Clínico e Organizacional, Professor Universitário
+              Palestrante, Psicólogo Clínico e Organizacional, Escritor, Professor Universitário
             </p>
           </div>
           
@@ -257,6 +257,7 @@
   line-height: 1.7;
   margin: 0;
 }
+
 
 .about__qualifications-title,
 .about__philosophy-title {

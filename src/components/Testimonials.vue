@@ -77,10 +77,10 @@ const testimonials = [
   },
   {
     id: 5,
-    text: 'A terapia individual me ajudou a resolver traumas antigos e a desenvolver uma autoestima mais saudável. O ambiente seguro e acolhedor criado pelo Dr. Luciano permitiu que eu me expressasse livremente e encontrasse meu equilíbrio emocional.',
-    name: 'Carlos Silva',
+    text: 'Minha empresa estava com um clima organizacional péssimo...produtividade em baixa, colaboradores desinteressados e claro, lucratividade la embaixo... O prof. Luciano foi fundamental nessa virada de chave. Hoje tudo mudou! Colaboradores bem treinados, felizes e produtivos e graças a este trabalho, tenho conseguido reter excelentes profissionais',
+    name: 'Marco Aurélio, 52 anos',
     initials: 'CS',
-    service: 'Terapia Individual'
+    service: 'Psicologia Organizacional'
   },
   {
     id: 6,

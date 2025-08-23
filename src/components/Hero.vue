@@ -195,7 +195,8 @@
 }
 
 .hero__image {
-  position: relative;
+  margin-top: 0;
+  align-self: start;
 }
 
 .hero__image-container {

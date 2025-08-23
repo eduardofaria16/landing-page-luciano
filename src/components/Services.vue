@@ -35,7 +35,8 @@
           </div>
           
           <div class="card-body">
-            <div class="features-grid">
+            <!-- Se for um card de lista -->
+            <div v-if="service.features" class="features-grid">
               <div 
                 class="feature-item" 
                 v-for="(feature, featureIndex) in service.features" 
@@ -49,6 +50,11 @@
                 </div>
                 <span class="feature-text">{{ feature }}</span>
               </div>
+            </div>
+
+            <!-- Se for um card de lançamentos com imagem -->
+            <div v-else-if="service.image" class="launch-image">
+              <img :src="service.image" alt="Capa do Livro" />
             </div>
           </div>
           
@@ -145,10 +151,33 @@ const services = [
       'Burnout Escolar e Acadêmico-Universitário',
     ],
   },
+  {
+    id: 4,
+    icon: '🚀',
+    title: 'Lançamentos e Publicações',
+    image: '/src/assets/capa-livro.png',
+  },
 ]
 </script>
 
 <style scoped>
+.launch-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.launch-image img {
+  max-width: 480px; /* tamanho máximo */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.launch-image img:hover {
+  transform: scale(1.05);
+}
+
 .services {
   background: linear-gradient(180deg, #f8f9f7 0%, #ffffff 50%, #f5f6f4 100%);
   padding: 80px 0;
