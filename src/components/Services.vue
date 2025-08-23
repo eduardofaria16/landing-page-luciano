@@ -155,7 +155,7 @@ const services = [
     id: 4,
     icon: '🚀',
     title: 'Lançamentos e Publicações',
-    image: '/src/assets/capa-livro.png',
+    image: 'public/capa-livro.png',
   },
 ]
 </script>
