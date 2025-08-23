@@ -34,9 +34,9 @@ import Footer from './components/Footer.vue'
 
 :root {
   /* Nova Paleta de Cores baseada na Logomarca */
-  --primary-color: #2D4A3A;
-  --accent-color: #D4A574;
-  --secondary-color: #4A6B5A;
+  --primary-color: #303829;
+  --accent-color: #D18552;
+  --secondary-color: #91907E;
   --light-color: #F5F1E8;
   --white: #ffffff;
   --dark-gray: #2c3e50;

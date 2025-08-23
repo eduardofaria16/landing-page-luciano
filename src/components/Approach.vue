@@ -1,119 +1,159 @@
 <template>
   <section id="abordagem" class="approach section">
     <div class="container">
-      <h2 class="section-title">Abordagem Terapêutica</h2>
-      <p class="section-subtitle">
-        Utilizo métodos científicos comprovados, adaptados às necessidades únicas de cada pessoa
-      </p>
       
-      <div class="approach__content">
-        <div class="approach__methods">
-          <div class="method-card" v-for="method in methods" :key="method.id">
-            <div class="method-card__header">
-              <div class="method-card__icon">{{ method.icon }}</div>
-              <h3 class="method-card__title">{{ method.title }}</h3>
-            </div>
-            <p class="method-card__description">{{ method.description }}</p>
-            <ul class="method-card__benefits">
-              <li v-for="benefit in method.benefits" :key="benefit">{{ benefit }}</li>
-            </ul>
-          </div>
-        </div>
+      <!-- Hero Section com Timeline Interativo -->
+      <div class="therapy-journey">
+        <h2 class="journey-title">Jornada Terapêutica Humanista</h2>
+        <p class="journey-subtitle">Uma abordagem centrada na pessoa para o seu crescimento</p>
         
-        <div class="approach__process">
-          <h3 class="approach__process-title">Como Funciona o Processo Terapêutico</h3>
-          <div class="process-steps">
-            <div class="process-step" v-for="(step, index) in processSteps" :key="step.id">
-              <div class="process-step__number">{{ index + 1 }}</div>
-              <div class="process-step__content">
-                <h4 class="process-step__title">{{ step.title }}</h4>
-                <p class="process-step__description">{{ step.description }}</p>
+        <!-- Timeline Principal -->
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+          <div class="timeline-steps">
+            <div 
+              class="timeline-step" 
+              v-for="(step, index) in processSteps" 
+              :key="step.id"
+              :class="{ 'active': activeStep === index }"
+              @click="setActiveStep(index)"
+            >
+              <div class="timeline-dot">
+                <div class="timeline-dot-inner">{{ index + 1 }}</div>
+              </div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">{{ step.title }}</h3>
+                <p class="timeline-description">{{ step.description }}</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <div class="approach__benefits">
-        <h3 class="approach__benefits-title">Benefícios da Terapia</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item" v-for="benefit in therapyBenefits" :key="benefit.id">
-            <div class="benefit-item__icon">{{ benefit.icon }}</div>
-            <h4 class="benefit-item__title">{{ benefit.title }}</h4>
-            <p class="benefit-item__description">{{ benefit.description }}</p>
+
+      <!-- Cards Flutuantes - Como Ocorre o Processo -->
+      <div class="floating-cards-section">
+        <h2 class="section-title">Como Ocorre o Processo</h2>
+        <div class="floating-cards">
+          <div 
+            class="floating-card" 
+            v-for="(step, index) in processSteps2" 
+            :key="step.id"
+            :style="{ '--delay': index * 0.2 + 's' }"
+          >
+            <div class="card-number">{{ index + 1 }}</div>
+            <div class="card-content">
+              <h3 class="card-title">{{ step.title }}</h3>
+              <p class="card-description">{{ step.description }}</p>
+            </div>
+            <div class="card-glow"></div>
           </div>
         </div>
       </div>
+
+      <!-- Seção Foco no Presente - Design Minimalista -->
+      <div class="present-focus">
+        <div class="present-focus-content">
+          <h2 class="present-title">Foco no Presente</h2>
+          <div class="present-grid">
+            <div class="present-item" v-for="(step, index) in processSteps3" :key="step.id">
+              <div class="present-icon">
+                <div class="pulse-ring"></div>
+                <span>{{ index + 1 }}</span>
+              </div>
+              <div class="present-text">
+                <h3 v-if="step.title" class="present-item-title">{{ step.title }}</h3>
+                <p class="present-description">{{ step.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Benefícios com Design de Grid Moderno -->
+      <div class="benefits-modern">
+        <h2 class="benefits-title">Transformação Através da Terapia</h2>
+        <div class="benefits-grid-modern">
+          <div 
+            class="benefit-card-modern" 
+            v-for="(benefit, index) in therapyBenefits" 
+            :key="benefit.id"
+            :style="{ '--index': index }"
+          >
+            <div class="benefit-icon-container">
+              <span class="benefit-icon">{{ benefit.icon }}</span>
+              <div class="benefit-icon-bg"></div>
+            </div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-description">{{ benefit.description }}</p>
+            <div class="benefit-hover-effect"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 </template>
 
 <script setup>
-const methods = [
-  {
-    id: 1,
-    icon: '🧠',
-    title: 'Terapia Cognitivo-Comportamental',
-    description: 'Abordagem focada na identificação e modificação de padrões de pensamento e comportamento que causam sofrimento.',
-    benefits: [
-      'Identificação de pensamentos disfuncionais',
-      'Desenvolvimento de estratégias de coping',
-      'Mudança de comportamentos problemáticos',
-      'Resultados comprovados cientificamente'
-    ]
-  },
-  {
-    id: 2,
-    icon: '❤️',
-    title: 'Abordagem Humanística',
-    description: 'Centrada na pessoa, valorizando a experiência individual e promovendo o crescimento pessoal e a autoaceitação.',
-    benefits: [
-      'Foco no potencial humano',
-      'Ambiente não-julgamental',
-      'Desenvolvimento da autoestima',
-      'Promoção da autenticidade'
-    ]
-  },
-  {
-    id: 3,
-    icon: '🧘',
-    title: 'Mindfulness e ACT',
-    description: 'Técnicas de atenção plena e Terapia de Aceitação e Compromisso para lidar com pensamentos e emoções difíceis.',
-    benefits: [
-      'Redução do stress e ansiedade',
-      'Maior consciência emocional',
-      'Aceitação de experiências difíceis',
-      'Foco nos valores pessoais'
-    ]
-  }
-]
+import { ref } from 'vue'
+
+const activeStep = ref(0)
+
+const setActiveStep = (index) => {
+  activeStep.value = index
+}
 
 const processSteps = [
   {
     id: 1,
-    title: 'Primeira Consulta',
-    description: 'Conhecimento mútuo, compreensão das suas necessidades e estabelecimento de objetivos terapêuticos.'
+    title: 'Harmonia e Autenticidade',
+    description: 'O terapeuta se mostra genuíno e autêntico, o que permite ao paciente sentir-se seguro para explorar seu próprio "eu" de forma aberta e sem receios.'
   },
   {
     id: 2,
-    title: 'Avaliação',
-    description: 'Análise aprofundada da situação atual, histórico pessoal e identificação de padrões comportamentais.'
+    title: 'Empatia e Compreensão',
+    description: 'O terapeuta se esforça para compreender o mundo do paciente a partir da perspectiva dele, comunicando essa compreensão ao paciente.'
   },
   {
     id: 3,
-    title: 'Plano Terapêutico',
-    description: 'Desenvolvimento de um plano personalizado com estratégias e técnicas adequadas ao seu caso.'
+    title: 'Aceitação Incondicional',
+    description: 'O terapeuta acolhe o paciente sem julgamentos, valorizando-o como ser humano e criando um espaço seguro para a expressão de seus sentimentos, pensamentos e experiências.'
   },
   {
     id: 4,
-    title: 'Acompanhamento',
-    description: 'Sessões regulares com monitorização do progresso e ajustes no plano conforme necessário.'
+    title: 'Autoconhecimento e Autorrealização',
+    description: 'À medida que o paciente se sente acolhido e compreendido, ele começa a se autoavaliar, tomar consciência de seus padrões de comportamento e emoções, e a desenvolver a aceitação de si mesmo, caminhando para a sua plena realização.'
+  },
+]
+
+const processSteps2 = [
+  {
+    id: 1,
+    title: 'Diálogo e Expressão',
+    description: 'O processo ocorre através da conversa, onde o cliente é encorajado a expressar seus sentimentos e pensamentos, fortalecendo a relação terapêutica.'
   },
   {
-    id: 5,
-    title: 'Consolidação',
-    description: 'Fortalecimento das competências adquiridas e preparação para a autonomia emocional.'
-  }
+    id: 2,
+    title: 'Auto-observação',
+    description: 'O paciente aprende a se observar, a reconhecer seus padrões de comportamento e a identificar como suas experiências passadas e crenças limitantes afetam seu presente.'
+  },
+  {
+    id: 3,
+    title: 'Desenvolvimento da Autoconsciência',
+    description: 'A terapia visa promover o autoconhecimento e o desenvolvimento do autoconceito, que é a percepção de si mesmo, incluindo a autoimagem, autoestima e o "eu ideal".'
+  },
+]
+
+const processSteps3 = [
+  {
+    id: 1,
+    description: 'Embora o passado seja explorado, o foco do humanismo está na experiência presente do paciente e no seu potencial para crescer e se autorrealizar.'
+  },
+  {
+    id: 2,
+    title: 'O Resultado',
+    description: 'O objetivo final é que o indivíduo se desenvolva de forma mais completa e autêntica, alcançando maior equilíbrio emocional e autonomia perante à vida e bem-estar através da própria experiência terapêutica.'
+  },
 ]
 
 const therapyBenefits = [
@@ -131,7 +171,7 @@ const therapyBenefits = [
   },
   {
     id: 3,
-    icon: '🌈',
+    icon: '🤝',
     title: 'Melhoria das Relações',
     description: 'Desenvolva habilidades de comunicação e relacionamento mais saudáveis.'
   },
@@ -158,248 +198,490 @@ const therapyBenefits = [
 
 <style scoped>
 .approach {
-  background-color: var(--light-gray);
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2a3021 50%, var(--secondary-color) 100%);
+  min-height: 100vh;
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.approach__content {
-  margin-bottom: var(--spacing-2xl);
+.approach::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(209, 133, 82, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(145, 144, 126, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 40% 40%, rgba(209, 133, 82, 0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-.approach__methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
-.method-card {
-  background-color: var(--white);
-  border-radius: 16px;
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-  border-left: 4px solid var(--accent-color);
+/* Timeline Interativo */
+.therapy-journey {
+  text-align: center;
+  margin-bottom: 80px;
 }
 
-.method-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+.journey-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-.method-card__header {
+.journey-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 60px;
+  font-weight: 300;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 100px);
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, white 50%, rgba(255,255,255,0.3) 100%);
+  border-radius: 2px;
+}
+
+.timeline-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.timeline-step {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  gap: 30px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.7;
 }
 
-.method-card__icon {
-  font-size: 2.5rem;
-  width: 60px;
-  height: 60px;
+.timeline-step:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.timeline-step.active {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.timeline-dot {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--light-gray);
-  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
-.method-card__title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  color: var(--primary-color);
-  margin: 0;
+.timeline-step.active .timeline-dot {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #b8734a 100%);
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(209, 133, 82, 0.4);
 }
 
-.method-card__description {
-  color: var(--neutral-color);
+.timeline-dot-inner {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.timeline-step.active .timeline-dot-inner {
+  color: white;
+}
+
+.timeline-content {
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-step.active .timeline-content {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-5px);
+}
+
+.timeline-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.timeline-description {
+  color: rgba(255,255,255,0.9);
   line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
 }
 
-.method-card__benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Cards Flutuantes */
+.floating-cards-section {
+  margin-bottom: 80px;
 }
 
-.method-card__benefits li {
-  position: relative;
-  padding-left: var(--spacing-lg);
-  margin-bottom: var(--spacing-xs);
-  color: var(--neutral-color);
-  font-size: var(--font-size-small);
-}
-
-.method-card__benefits li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent-color);
-  font-weight: bold;
-}
-
-.approach__process {
-  background-color: var(--white);
-  border-radius: 16px;
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
-}
-
-.approach__process-title {
-  font-size: var(--font-size-2xl);
+.section-title {
+  font-size: 2.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: white;
   text-align: center;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 50px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-.process-steps {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+.floating-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
 }
 
-.process-step {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--spacing-md);
+.floating-card {
   position: relative;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: floatIn 0.8s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+  opacity: 0;
+  transform: translateY(30px);
+  overflow: hidden;
 }
 
-.process-step:not(:last-child)::after {
-  content: '';
+@keyframes floatIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floating-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  background: rgba(255,255,255,0.15);
+}
+
+.card-number {
   position: absolute;
-  left: 24px;
-  top: 60px;
-  width: 2px;
-  height: calc(100% + var(--spacing-lg));
-  background-color: var(--accent-color);
-  opacity: 0.3;
-}
-
-.process-step__number {
-  width: 48px;
-  height: 48px;
-  background-color: var(--accent-color);
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #b8734a 100%);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: var(--font-size-large);
+  font-size: 1.1rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-card:hover .card-glow {
+  opacity: 1;
+}
+
+/* Foco no Presente */
+.present-focus {
+  margin-bottom: 80px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 50px 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.present-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.present-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.present-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  text-align: left;
+}
+
+.present-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #b8734a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
   flex-shrink: 0;
 }
 
-.process-step__content {
+.pulse-ring {
+  position: absolute;
+  border: 3px solid rgba(209, 133, 82, 0.4);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.present-text {
   flex: 1;
-  padding-top: var(--spacing-xs);
 }
 
-.process-step__title {
-  font-size: var(--font-size-large);
+.present-item-title {
+  font-size: 1.2rem;
   font-weight: 600;
-  color: var(--primary-color);
-  margin: 0 0 var(--spacing-xs) 0;
+  color: white;
+  margin-bottom: 8px;
 }
 
-.process-step__description {
-  color: var(--neutral-color);
+.present-description {
+  color: rgba(255,255,255,0.9);
   line-height: 1.6;
-  margin: 0;
+  font-size: 1rem;
 }
 
-.approach__benefits {
-  background-color: var(--white);
-  border-radius: 16px;
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-sm);
+/* Benefícios Modernos */
+.benefits-modern {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(30px);
+  border-radius: 30px;
+  padding: 50px 30px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.approach__benefits-title {
-  font-size: var(--font-size-2xl);
-  font-weight: 600;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.benefit-item {
-  text-align: center;
-  padding: var(--spacing-lg);
-  border-radius: 12px;
-  transition: transform var(--transition-normal);
-}
-
-.benefit-item:hover {
-  transform: translateY(-4px);
-  background-color: var(--light-gray);
-}
-
-.benefit-item__icon {
+.benefits-title {
   font-size: 2.5rem;
-  margin-bottom: var(--spacing-md);
-}
-
-.benefit-item__title {
-  font-size: var(--font-size-large);
   font-weight: 600;
-  color: var(--primary-color);
-  margin: 0 0 var(--spacing-sm) 0;
+  color: white;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
-.benefit-item__description {
-  color: var(--neutral-color);
-  line-height: 1.6;
-  margin: 0;
+.benefits-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.benefit-card-modern {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+  opacity: 0;
+  transform: translateY(30px);
+  overflow: hidden;
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.benefit-card-modern:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 100%);
+}
+
+.benefit-icon-container {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 20px;
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.benefit-icon-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, rgba(209, 133, 82, 0.2) 0%, rgba(184, 115, 74, 0.2) 100%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.benefit-card-modern:hover .benefit-icon-bg {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: linear-gradient(135deg, rgba(209, 133, 82, 0.35) 0%, rgba(184, 115, 74, 0.35) 100%);
+}
+
+.benefit-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.benefit-description {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.benefit-hover-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.benefit-card-modern:hover .benefit-hover-effect {
+  transform: translateX(100%);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .approach__methods {
+  .journey-title {
+    font-size: 2.5rem;
+  }
+  
+  .timeline-step {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  .timeline-line {
+    display: none;
+  }
+  
+  .floating-cards {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
   }
   
-  .method-card,
-  .approach__process,
-  .approach__benefits {
-    padding: var(--spacing-lg);
-  }
-  
-  .benefits-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-  
-  .process-step {
+  .present-item {
     flex-direction: column;
     text-align: center;
   }
   
-  .process-step:not(:last-child)::after {
-    display: none;
+  .benefits-grid-modern {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title,
+  .benefits-title,
+  .present-title {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .method-card__header {
-    flex-direction: column;
-    text-align: center;
+  .container {
+    padding: 0 15px;
   }
   
-  .approach__process-title,
-  .approach__benefits-title {
-    font-size: var(--font-size-xl);
+  .timeline-content,
+  .floating-card,
+  .present-focus,
+  .benefits-modern {
+    padding: 25px 20px;
+  }
+  
+  .journey-title {
+    font-size: 2rem;
   }
 }
 </style>
-

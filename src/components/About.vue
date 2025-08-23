@@ -4,7 +4,7 @@
       <div class="about__header">
         <h2 class="about__title">Conheça Nosso Diretor Presidente</h2>
         <p class="about__subtitle">
-          Dedicado ao bem-estar mental e emocional há mais de 25 anos
+          Dedicado à promoção, autonomia e empoderamento das pessoas e organizações
         </p>
       </div>
       
@@ -95,6 +95,12 @@
                 <div class="about__qualification-text">
                   <strong>Professor Universitário</strong>
                   <span>MBA e Pós-graduação</span>
+                </div>
+              </div>
+              <div class="about__qualification">
+                <span class="about__qualification-icon">🎓</span>
+                <div class="about__qualification-text">
+                  <a href="http://lattes.cnpq.br/0000556466002008"><strong>Acesse Curriculo lattes</strong></a>
                 </div>
               </div>
             </div>

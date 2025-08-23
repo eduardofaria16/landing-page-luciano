@@ -49,8 +49,8 @@
 const testimonials = [
   {
     id: 1,
-    text: 'O Dr. Luciano me ajudou a superar um período muito difícil da minha vida. Sua abordagem empática e profissional fez toda a diferença. Hoje me sinto muito mais confiante e capaz de lidar com os desafios do dia a dia.',
-    name: 'Maria S.',
+    text: 'Cheguei aos 40 anos e muito angustiado com minha situação profissional...precisava mudar...não estava legal. Procurei o Dr. Luciano e foi como um bálsamo! Ele me ajudou bastante fazer minha transição de carreira e hoje estou muito satisfeito com minha nova vida.',
+    name: 'Nome: Maria S, Idade: 38, Profissão: Dentista',
     initials: 'MS',
     service: 'Terapia Individual'
   },

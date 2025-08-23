@@ -14,7 +14,7 @@
       </nav>
       
       <div class="header__actions">
-        <a href="#whatsapp" class="header__cta">Agendar Consulta</a>
+        <a href="https://wa.me/message/JL5C2FM6USUGA1" class="header__cta">Agendar Consulta</a>
         <button 
           class="header__menu-toggle"
           @click="toggleMenu"
