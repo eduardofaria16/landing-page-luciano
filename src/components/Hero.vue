@@ -2,6 +2,18 @@
   <section id="inicio" class="hero">
     <div class="hero__container">
       <div class="hero__content">
+        <!-- Imagem movida para dentro do grid -->
+        <div class="hero__image">
+          <div class="hero__image-container">
+            <img 
+              src="/src/assets/LOGOTIPO.png" 
+              alt="Consultório de psicologia acolhedor e profissional"
+              class="hero__img"
+            />
+          </div>
+        </div>
+        
+        <!-- Conteúdo de texto -->
         <div class="hero__text">
           <h1 class="hero__title">
             Transformamos vidas, 
@@ -39,16 +51,6 @@
         </div>
       </div>
     </div>
-            
-    <div class="hero__image">
-          <div class="hero__image-container">
-            <img 
-              src="/src/assets/LOGOTIPO.png" 
-              alt="Consultório de psicologia acolhedor e profissional"
-              class="hero__img"
-            />
-          </div>
-    </div>
   </section>
 </template>
 
@@ -61,7 +63,7 @@
   background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
   display: flex;
   align-items: center;
-  padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+  padding: calc(var(--spacing-4xl) + 80px) 0 var(--spacing-3xl);
   position: relative;
   overflow: hidden;
 }
@@ -91,7 +93,16 @@
   align-items: center;
 }
 
+.hero__image {
+  /* Imagem fica na primeira coluna (esquerda) no desktop */
+  grid-column: 1;
+  grid-row: 1;
+}
+
 .hero__text {
+  /* Texto fica na segunda coluna (direita) no desktop */
+  grid-column: 2;
+  grid-row: 1;
   max-width: 600px;
 }
 
@@ -194,11 +205,6 @@
   font-weight: 500;
 }
 
-.hero__image {
-  margin-top: 0;
-  align-self: start;
-}
-
 .hero__image-container {
   position: relative;
   border-radius: var(--border-radius-xl);
@@ -261,23 +267,47 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    padding: calc(var(--spacing-3xl) + 80px) 0 var(--spacing-2xl);
     min-height: auto;
   }
   
   .hero__content {
+    /* Muda para uma coluna no mobile */
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
     text-align: center;
   }
   
+  .hero__image {
+    /* Imagem fica no topo no mobile */
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+    max-width: 400px;
+    justify-self: center;
+  }
+  
+  .hero__text {
+    /* Texto fica abaixo da imagem no mobile */
+    grid-column: 1;
+    grid-row: 2;
+  }
+  
   .hero__title {
     font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-xl);
   }
   
   .hero__actions {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-md);
   }
   
   .hero__features {
@@ -301,24 +331,33 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: var(--spacing-2xl) 0;
+    padding: calc(var(--spacing-2xl) + 80px) 0;
   }
   
   .hero__container {
     padding: 0 var(--spacing-sm);
   }
   
+  .hero__image {
+    max-width: 300px;
+    margin-bottom: var(--spacing-lg);
+  }
+  
   .hero__title {
     font-size: var(--font-size-2xl);
+    line-height: 1.2;
   }
   
   .hero__subtitle {
     font-size: var(--font-size-sm);
+    line-height: 1.5;
   }
   
   .btn {
     padding: var(--spacing-md) var(--spacing-lg);
     font-size: var(--font-size-sm);
+    width: 100%;
+    max-width: 280px;
   }
   
   .hero__features {
@@ -331,12 +370,43 @@
   }
   
   .hero__img {
-    height: 250px;
+    height: 350px;
   }
   
   .hero__image-overlay {
-    
     right: var(--spacing-md);
+  }
+  
+  .hero__content {
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: calc(var(--spacing-xl) + 80px) 0;
+  }
+  
+  .hero__image {
+    max-width: 250px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .hero__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-xs);
+  }
+  
+  .hero__img {
+    height: 200px;
   }
 }
 </style>

@@ -666,70 +666,196 @@ const services = [
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .services-showcase {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
   }
   
-  .service-card-modern.featured {
-    transform: none;
-  }
-  
-  .service-card-modern.featured:hover {
-    transform: translateY(-15px) scale(1.02);
+  .modalities-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
   
   .hero-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-3xl);
   }
   
-  .modalities-title {
-    font-size: 2rem;
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .services-hero {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .services-showcase {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .service-card-modern {
+    padding: var(--spacing-xl);
+  }
+  
+  .service-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .modalities-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
   
   .modality-card {
-    padding: 40px 30px;
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-xl);
+  }
+  
+  .modality-visual {
+    margin-bottom: var(--spacing-lg);
   }
   
   .modality-benefits {
     justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .benefit-tag {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .modalities-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .modalities-subtitle {
+    font-size: var(--font-size-base);
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-  
   .services {
-    padding: 60px 0;
+    padding: var(--spacing-2xl) 0;
   }
   
-  .service-card-modern,
-  .modalities-section {
-    padding: 30px 20px;
+  .container {
+    padding: 0 var(--spacing-sm);
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
   }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .service-card-modern {
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+  }
+  
+  .service-title {
+    font-size: var(--font-size-base);
+  }
+  .launch-image img {
+  max-width: 350px; /* tamanho máximo */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
   
   .service-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 2.5rem;
+    font-size: var(--font-size-2xl);
   }
   
-  .modality-icon {
-    width: 100px;
-    height: 100px;
-    font-size: 3rem;
+  .modality-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .modality-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .modality-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
   }
   
   .benefit-tag {
-    font-size: 0.8rem;
-    padding: 8px 15px;
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .modalities-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .modalities-subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .features-grid {
+    gap: var(--spacing-sm);
+  }
+  
+  .feature-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .feature-text {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .service-card-modern {
+    padding: var(--spacing-md);
+  }
+  
+  .modality-card {
+    padding: var(--spacing-md);
+  }
+  
+  .modality-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .benefit-tag {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs);
+  }
+  
+  .service-icon {
+    font-size: var(--font-size-xl);
   }
 }
 </style>

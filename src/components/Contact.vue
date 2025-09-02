@@ -447,28 +447,73 @@ const openInstagram = () => {
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+  .contact__cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  .contact__info {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .contact {
+    padding: var(--spacing-3xl) 0;
+  }
+  
   .contact__cards {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
   }
   
   .contact__card {
     padding: var(--spacing-xl);
   }
   
+  .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+  
   .card__features {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
   }
   
   .contact__info {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+  
+  .info__item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .card__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .card__description {
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (max-width: 480px) {
+  .contact {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
   .contact__card {
     padding: var(--spacing-lg);
     border-radius: 16px;
@@ -479,19 +524,63 @@ const openInstagram = () => {
     height: 50px;
   }
   
-  .card__icon svg {
-    width: 24px;
-    height: 24px;
+  .card__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .card__description {
+    font-size: var(--font-size-xs);
+    line-height: 1.5;
+  }
+  
+  .card__username,
+  .card__phone {
+    font-size: var(--font-size-base);
+  }
+  
+  .contact__info {
+    padding: var(--spacing-md);
+    border-radius: 16px;
+  }
+  
+  .info__icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .info__value {
+    font-size: var(--font-size-sm);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 360px) {
+  .contact__card {
+    padding: var(--spacing-md);
+  }
+  
+  .card__icon {
+    width: 45px;
+    height: 45px;
   }
   
   .card__title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
   }
   
-  .card__header {
-    flex-direction: column;
-    gap: var(--spacing-sm);
-    align-items: flex-start;
+  .card__description {
+    font-size: var(--font-size-xs);
+  }
+  
+  .contact__info {
+    padding: var(--spacing-sm);
   }
 }
 </style>

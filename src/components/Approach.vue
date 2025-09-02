@@ -634,54 +634,226 @@ const therapyBenefits = [
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .timeline-steps {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .floating-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .present-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .benefits-grid-modern {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
   .journey-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-3xl);
+  }
+  
+  .journey-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 768px) {
+  .approach {
+    padding: var(--spacing-3xl) 0;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .therapy-journey {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  
+  .journey-title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .journey-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .timeline-steps {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
   
   .timeline-step {
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-  
-  .timeline-line {
-    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-md);
   }
   
   .floating-cards {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .floating-card {
+    padding: var(--spacing-xl);
+  }
+  
+  .present-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
   
   .present-item {
     flex-direction: column;
     text-align: center;
+    gap: var(--spacing-md);
   }
   
   .benefits-grid-modern {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
   
-  .section-title,
-  .benefits-title,
+  .benefit-card-modern {
+    padding: var(--spacing-xl);
+  }
+  
+  .section-title {
+    font-size: var(--font-size-xl);
+  }
+  
   .present-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
+  }
+  
+  .benefits-title {
+    font-size: var(--font-size-xl);
   }
 }
 
 @media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
+  .approach {
+    padding: var(--spacing-2xl) 0;
   }
   
-  .timeline-content,
-  .floating-card,
-  .present-focus,
-  .benefits-modern {
-    padding: 25px 20px;
+  .container {
+    padding: 0 var(--spacing-sm);
   }
   
   .journey-title {
-    font-size: 2rem;
+    font-size: var(--font-size-xl);
+  }
+  
+  .journey-subtitle {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .timeline-step {
+    padding: var(--spacing-md);
+  }
+  
+  .timeline-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .timeline-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .floating-card {
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+  }
+  
+  .card-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .card-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .present-item {
+    padding: var(--spacing-md);
+  }
+  
+  .present-item-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .present-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .benefit-card-modern {
+    padding: var(--spacing-lg);
+    border-radius: 16px;
+  }
+  
+  .benefit-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .benefit-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .benefit-icon {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .benefit-icon-bg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .section-title,
+  .present-title,
+  .benefits-title {
+    font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 360px) {
+  .journey-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .timeline-step {
+    padding: var(--spacing-sm);
+  }
+  
+  .floating-card {
+    padding: var(--spacing-md);
+  }
+  
+  .present-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .benefit-card-modern {
+    padding: var(--spacing-md);
+  }
+  
+  .benefit-icon {
+    font-size: var(--font-size-xl);
+  }
+  
+  .benefit-icon-bg {
+    width: 50px;
+    height: 50px;
   }
 }
 </style>

@@ -12,7 +12,7 @@
         <div class="about__image">
           <div class="about__image-container">
             <img 
-              src="/src/assets/_MG_2760.JPG" 
+              src="/src/assets/lucianoSobre.jpeg" 
               alt="Luciano Tarso - Psicólogo Clínico e Organizacional"
               class="about__img"
             />
@@ -365,44 +365,47 @@
   }
   
   .about__container {
-    padding: 0 var(--spacing-sm);
-  }
-  
-  .about__title {
-    font-size: var(--font-size-3xl);
+    padding: 0 var(--spacing-md);
   }
   
   .about__content {
     grid-template-columns: 1fr;
     gap: var(--spacing-2xl);
+    text-align: center;
+  }
+  
+  .about__image {
+    order: -1;
   }
   
   .about__img {
     height: 300px;
   }
   
-  .about__name {
-    font-size: var(--font-size-2xl);
+  .about__badge {
+    right: var(--spacing-md);
+    padding: var(--spacing-md);
   }
   
-  .about__credentials {
-    font-size: var(--font-size-base);
+  .about__badge-text {
+    font-size: var(--font-size-lg);
   }
   
   .about__qualifications-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  
+  .about__qualification {
+    flex-direction: column;
+    text-align: center;
+    padding: var(--spacing-md);
   }
   
   .about__philosophy-item {
     flex-direction: column;
     text-align: center;
-    gap: var(--spacing-md);
-  }
-}
-
-@media (max-width: 480px) {
-  .about {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-lg);
   }
   
   .about__title {
@@ -413,26 +416,99 @@
     font-size: var(--font-size-base);
   }
   
-  .about__text {
-    gap: var(--spacing-xl);
+  .about__name {
+    font-size: var(--font-size-xl);
   }
   
-  .about__qualification {
-    padding: var(--spacing-md);
+  .about__credentials {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: var(--spacing-2xl) 0;
   }
   
-  .about__philosophy-item {
-    padding: var(--spacing-lg);
+  .about__container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .about__title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .about__subtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .about__name {
+    font-size: var(--font-size-lg);
+  }
+  
+  .about__credentials {
+    font-size: var(--font-size-sm);
+  }
+  
+  .about__description p {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+  
+  .about__img {
+    height: 350px;
   }
   
   .about__badge {
-    top: var(--spacing-md);
-    right: var(--spacing-md);
-    padding: var(--spacing-md);
+    left: var(--spacing-sm);
+    right: auto;
+    padding: var(--spacing-sm);
   }
   
   .about__badge-text {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
+  }
+  
+  .about__qualification {
+    padding: var(--spacing-sm);
+  }
+  
+  .about__philosophy-item {
+    padding: var(--spacing-md);
+  }
+  
+  .about__qualifications-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .about__philosophy-text strong {
+    font-size: var(--font-size-base);
+  }
+  
+  .about__philosophy-text p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 360px) {
+  .about__title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .about__name {
+    font-size: var(--font-size-base);
+  }
+  
+  .about__img {
+    height: 200px;
+  }
+  
+  .about__badge {
+    padding: var(--spacing-xs);
+  }
+  
+  .about__badge-text {
+    font-size: var(--font-size-sm);
   }
 }
 </style>
